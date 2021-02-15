@@ -21,24 +21,21 @@ public class CardTrick {
         Scanner input = new Scanner(System.in);
         
 
-        Card[] magicHand = new Card[7];
+     
+      
+        Card[] luckyCard = new Card[7];
         
 
          Random random = new Random();
 
-        for (int i=0; i<magicHand.length; i++){
+        for (int i=0; i<luckyCard.length; i++){
             int value = random.nextInt(13) + 1;
            String suit = Card.SUITS[random.nextInt(4)];
 
             Card card = new Card(value, suit);
-            magicHand[i] = card;
+            luckyCard[i] = card;
         }
 
-     
-//        System.out.println("Here are the cards in the hand");
-//        for (Card card : magicHand) {
-//           System.out.printf("%d of %s\n", card.getValue(), card.getSuit());
-//        }
 
                                  
                 //  Asking the user for a card
@@ -54,7 +51,7 @@ public class CardTrick {
         Card userGuess = new Card(value, Card.SUITS[suit - 1]);
 
         boolean match = false;
-       for (Card card : magicHand) {
+       for (Card card : luckyCard) {
           if (card.getValue() == userGuess.getValue()
                    && card.getSuit().equals(userGuess.getSuit())) {
               match = true;
@@ -62,7 +59,7 @@ public class CardTrick {
            }
        }
     
-        String response = match ? "Right guess": "No match";
+        String response = match ? "Hurray!!! You found your Luck card!": "Damn it!!! Good luck next time";
         
         System.out.println(response);
     }
