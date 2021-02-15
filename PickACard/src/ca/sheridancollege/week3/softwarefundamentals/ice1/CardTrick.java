@@ -59,7 +59,7 @@ public class CardTrick {
                    && card.getSuit().equals(userGuess.getSuit())) {
               match = true;
               break;
-           }
+           } 
        }
     
         String response = match ? "Right guess": "No match";
